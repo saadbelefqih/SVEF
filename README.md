@@ -55,7 +55,7 @@ pip install -r
 ```bash
 git clone https://github.com/saadbelefqih/SVEF.git
 cd SVEF
-pip install -r requirements.txt
+pip install -r 
 ```
 
 ## Running the Evaluation
