@@ -5,7 +5,7 @@ This repository contains the reference implementation of **SVEF (Schema Validati
 SVEF evaluates extracted schemas across six dimensions:
 
 - **Data Type Accuracy (DTA)**
-- **Required and Optional Fields**
+- **Required and Optional Fields (ROF)**
 - **Multiple Type Support (MTS)**
 - **Collection Structure Consistency (CSC)**
 - **Entity Relationship Recovery (ERR)**
