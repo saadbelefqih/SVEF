@@ -47,7 +47,7 @@ Instead, it denotes a structured JSON-based representation used for evaluation i
 Install dependencies with:
 
 ```bash
-pip install -r requirements.txt
+pip install -r 
 ```
 
 ## Installation
