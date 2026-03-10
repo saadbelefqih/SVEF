@@ -20,14 +20,11 @@ The implementation supports evaluation against **reference schemas** and benchma
 ```text
 SVEF/
 ├── README.md
-├── LICENSE
-├── requirements.txt
 ├── SVEF.py
 ├── dataset.py
-├── schemas/
-├── datasets/
-├── results/
-└── examples/
+schemas/
+├── ecommerce_ground_truth.json
+└── ecommerce_inferred.json
 ```
 
 ## Schema Representation
