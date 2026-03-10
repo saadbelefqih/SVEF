@@ -1,0 +1,104 @@
+{
+  "dataset_name": "ecommerce",
+  "entities": {
+    "Order": {
+      "properties": {
+        "order_id": "string",
+        "customer_id": "string",
+        "items": "array",
+        "payment_method": "string",
+        "shipping_address": "object",
+        "delivery_status": "string",
+        "discount_code": "string",
+        "payment_details": "object",
+        "is_expedited": "boolean"
+      },
+      "required_properties": [
+        "order_id",
+        "customer_id",
+        "items",
+        "payment_method"
+      ]
+    },
+    "Customer": {
+      "properties": {
+        "customer_id": "string"
+      },
+      "required_properties": [
+        "customer_id"
+      ]
+    },
+    "Item": {
+      "properties": {
+        "product_id": "string",
+        "quantity": "number",
+        "price": "string"
+      },
+      "required_properties": [
+        "product_id",
+        "quantity"
+      ]
+    }
+  },
+  "optional_properties": {
+    "Order": [
+      "discount_code",
+      "payment_details",
+      "delivery_status",
+      "is_expedited",
+      "shipping_address"
+    ],
+    "Customer": [],
+    "Item": [
+      "price"
+    ]
+  },
+  "union_types": {
+    "price": [
+      "number",
+      "string"
+    ],
+    "shipping_address": [
+      "object"
+    ]
+  },
+  "array_properties": {
+    "items": {
+      "item_types": [
+        "object"
+      ],
+      "nesting_depth": 1,
+      "homogeneous": true
+    }
+  },
+  "relationships": [
+    {
+      "source": "Order",
+      "target": "Customer",
+      "type": "reference",
+      "property": "customer_id",
+      "multiplicity": "many-to-one"
+    },
+    {
+      "source": "Order",
+      "target": "Item",
+      "type": "aggregation",
+      "property": "items",
+      "multiplicity": "one-to-many"
+    }
+  ],
+  "evolution_patterns": [
+    {
+      "version": "v1",
+      "changes": [
+        "initial order structure"
+      ]
+    },
+    {
+      "version": "v2",
+      "changes": [
+        "added delivery_status"
+      ]
+    }
+  ]
+}
